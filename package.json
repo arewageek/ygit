@@ -1,16 +1,24 @@
 {
-  "name": "x402-boilerplate",
+  "name": "ygit",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun --hot index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
+    "@types/degit": "^2.8.6",
+    "@types/node": "^25.2.1",
+    "@types/yargs": "^17.0.35",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "degit": "^2.8.4",
+    "yargs": "^18.0.0"
   }
 }

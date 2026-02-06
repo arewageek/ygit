@@ -11,6 +11,7 @@
       "ESNext.Promise"
     ],
     "module": "nodenext",
+    "types": ["node", "yargs"],
     "target": "es2024",
     "strict": true,
     "esModuleInterop": true,
