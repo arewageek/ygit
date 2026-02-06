@@ -2,3 +2,5 @@
 .env
 .env.local
 .gitignore
+.zencoder
+.zenflow

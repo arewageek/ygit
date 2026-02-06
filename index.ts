@@ -1,16 +1,27 @@
+import Conf from "conf";
 import degit from "degit";
 import yargs from "yargs";
 import {hideBin} from 'yargs/helpers'
 
+const config = new Conf({projectName: 'ygit'})
+
 yargs(hideBin(process.argv))
     .command({
-        command: 'init <template> <destination>',
+        command: 'config <key> <value>',
+        describe: 'configure git source',
+        handler: (argv: any) => {
+            console.log('Configuring git source...');
+            config.set(argv.key, argv.value)
+        },
+    })
+    .command({
+        command: 'clone <template> <destination>',
         describe: 'Scaffold a new project at the given destination',
         builder: (yargs: yargs) => yargs
             .option('cache', {
                 type: 'boolean',
                 alias: 'c',
-                description: 'Use degit cache',
+                description: 'Use cache',
                 default: false,
             })
             .option('force', {
@@ -28,12 +39,12 @@ yargs(hideBin(process.argv))
             .option('src', {
                 type: 'string',
                 alias: 's',
-                default: 'github',
+                default: config.get('src') || 'github',
                 description: 'Source platform (github, gitlab, bitbucket)',
             })
             .option('user', {
                 type: 'string',
-                default: 'arewageek',
+                default: config.get('user') || 'arewageek',
                 description: 'Username or organization name',
             }),
         handler: async (argv: any) => {
