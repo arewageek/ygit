@@ -1,6 +1,11 @@
 {
-  "name": "ygit",
-  "version": "1.0.0",
+  "name": "@arewageek/ygit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arewageek/ygit.git"
+  },
+  "homepage": "https://github.com/arewageek/ygit#readme",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
